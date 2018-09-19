@@ -25,7 +25,9 @@
     "angular-pipes": "^8.1.1",
     "bluebird": "^3.5.2",
     "core-js": "^2.5.4",
+    "ng2-cookies": "^1.0.12",
     "rxjs": "^6.0.0",
+    "sweetalert2": "^7.26.29",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

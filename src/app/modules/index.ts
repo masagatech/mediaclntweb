@@ -1,10 +1,33 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { ModuleComponent } from './module.comp';
 import { SharedModule } from '../shared/shared-module';
-import {  } from '../modules/module.comp';
+
+export const routes = [
+    {
+        path: '',
+        component: ModuleComponent,
+        children: [
+            {
+                path: '',
+                children: [
+                    { path: '', loadChildren: './master/master.module#MasterModule' },
+                ]
+            }
+        ]
+    },
+];
+
 @NgModule({
-    declarations: [],
-    imports: [SharedModule],
+    imports: [RouterModule.forChild(routes), SharedModule,
+    ],
+    declarations: [
+        ModuleComponent
+    ],
     exports: [],
     providers: [],
 })
-export class MainModule { }
+
+export class MainModule {
+
+}

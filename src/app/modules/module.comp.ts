@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-maincomp',
-    templateUrl: './maincomp.comp.html'
+    templateUrl: './module.comp.html'
 })
-export class NameComponent implements OnInit {
+
+export class ModuleComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void { }
