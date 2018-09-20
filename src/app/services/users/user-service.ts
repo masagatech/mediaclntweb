@@ -10,7 +10,7 @@ export class UserService {
         return this._dataserver.post("getUserDetails", req)
     }
 
-    saveUserInfo(req: any) {
-        return this._dataserver.post("saveUserInfo", req)
+    registeredUser(req: any) {
+        return this._dataserver.post("registeredUser", req)
     }
 }

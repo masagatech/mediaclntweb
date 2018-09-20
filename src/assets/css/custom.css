@@ -1,1 +1,14 @@
 /* your styles go here */
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: inline-block !important;
+}
+
+.password {
+    position: absolute;
+    margin: 15px -20px;
+}

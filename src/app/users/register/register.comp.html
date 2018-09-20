@@ -8,27 +8,30 @@
 
                 <form class="text-left form-validate">
                     <div class="form-group-material">
-                        <input id="register-username" type="text" name="registerUsername" required data-msg="Please enter your username" class="input-material">
-                        <label for="register-username" class="label-material">Username</label>
+                        <input id="txtfullname" type="text" [(ngModel)]="name" name="fullname" class="input-material fullname">
+                        <label for="txtfullname" class="label-material">Full Name</label>
                     </div>
                     <div class="form-group-material">
-                        <input id="register-email" type="email" name="registerEmail" required data-msg="Please enter a valid email address" class="input-material">
-                        <label for="register-email" class="label-material">Email Address</label>
+                        <input id="txtemail" type="text" [(ngModel)]="email" name="email" class="input-material email">
+                        <label for="txtemail" class="label-material">Email Address</label>
                     </div>
                     <div class="form-group-material">
-                        <input id="register-password" type="password" name="registerPassword" required data-msg="Please enter your password" class="input-material">
-                        <label for="register-password" class="label-material">Password</label>
+                        <input id="txtpwd" type="password" [(ngModel)]="pwd" name="pwd" class="input-material pwd">
+                        <label for="txtpwd" class="label-material">Password</label>
+
+                        <span id="lblshowpwd" class="password float-right" (click)="showPassword('password')"><i class="fa fa-key"></i></span>
+                        <span id="lblhidepwd" class="password float-right" (click)="showPassword('text')"><i class="fa fa-eye"></i></span>
                     </div>
                     <div class="form-group terms-conditions text-center">
-                        <input id="register-agree" name="registerAgree" type="checkbox" required value="1" data-msg="Your agreement is required" class="form-control-custom">
-                        <label for="register-agree">I agree with the terms and policy</label>
+                        <input id="chkagree" name="agree" type="checkbox" required value="1" data-msg="Your agreement is required" class="form-control-custom">
+                        <label for="chkagree">I agree with the terms and policy</label>
                     </div>
                     <div class="form-group text-center">
-                        <a role="button" (click)="register()" class="btn btn-primary">Register</a>
+                        <a role="button" (click)="registeredUser()" class="btn btn-primary">Register</a>
                     </div>
                 </form>
 
-                <small>Already have an account? </small>
+                <small>Already have an account ?</small>
                 <a [routerLink]="['/login']" class="signup">Login</a>
             </div>
         </div>
