@@ -1,0 +1,94 @@
+<div class="card">
+    <div class="header">
+        <h4>Workspace</h4>
+
+        <ul class="header-dropdown m-r--5">
+            <li *ngIf="paramsid !== 0 && iseditws == true">
+                <span class="switch">
+                        <label><input type="checkbox" [(ngModel)]="isactive" (ngModelChange)="active_deactiveWorkspaceInfo()"><span class="lever"></span></label>
+                </span>
+            </li>
+            <li *ngIf="paramsid != 0 && iseditws == true">
+                <a role="button" class="btn btn-danger" (click)="deleteWorkspace()">
+                    <i class="material-icons">delete</i>
+                </a>
+            </li>
+            <li *ngIf="iseditws == true">
+                <a role="button" class="btn btn-theme" (click)="saveWorkspaceInfo()">
+                    <i class="material-icons">save</i>
+                </a>
+            </li>
+            <li>
+                <a role="button" class="btn btn-theme" (click)="backViewData()">
+                    <i class="material-icons">arrow_back</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="body">
+        <div class="form-outer text-center d-flex align-items-center">
+            <div class="form-inner" style="width:100%">
+                <form class="text-left form-validate">
+                    <div class="row clearfix">
+                        <div class="col-md-4">
+                            <div class="form-group-material">
+                                <input id="txtwscode" type="text" [(ngModel)]="wscode" name="wscode" class="input-material wscode">
+                                <label for="txtwscode" class="label-material">Workspace Code</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group-material">
+                                <input id="txtwsname" type="text" [(ngModel)]="wsname" name="wsname" class="input-material wsname">
+                                <label for="txtwsname" class="label-material">Workspace Name</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-4">
+                            <div class="form-group-material">
+                                <input id="txtlgcode" type="text" [(ngModel)]="lgcode" name="lgcode" class="input-material lgcode">
+                                <label for="txtlgcode" class="label-material">Login Code</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group-material">
+                                .{{wscode}}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group-material">
+                                <input id="txtlgpwd" type="password" [(ngModel)]="lgpwd" name="lgpwd" class="input-material lgpwd">
+                                <label for="txtlgpwd" class="label-material">Password</label>
+
+                                <span id="lblshowpwd" class="password float-right" (click)="showPassword('password')"><i class="fa fa-key"></i></span>
+                                <span id="lblhidepwd" class="password float-right" (click)="showPassword('text')"><i class="fa fa-eye"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-material">
+                        <input id="txtwsdesc" type="text" [(ngModel)]="wsdesc" name="wsdesc" class="input-material wsdesc">
+                        <label for="txtwsdesc" class="label-material">Description</label>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-4">
+                            <div class="form-group-material">
+                                <input id="txtmobile" type="text" [(ngModel)]="mobile" name="mobile" class="input-material mobile">
+                                <label for="txtmobile" class="label-material">Owner Mobile No</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group-material">
+                                <input id="txtemail" type="text" [(ngModel)]="email" name="email" class="input-material email">
+                                <label for="txtemail" class="label-material">Owner Email ID</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-material">
+                        <input id="txtaddr" type="text" [(ngModel)]="address" name="address" class="input-material address">
+                        <label for="txtaddr" class="label-material">Address</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
