@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { DataService } from '../dataconnect';
-
 @Injectable()
-export class WorkspaceService {
+export class EntityService {
+
     constructor(private _dataserver: DataService) { }
 
-    getWorkspaceDetails(req: any) {
+    geEntityDetails(req: any) {
         return this._dataserver.get('getWrkspace', req);
     }
 
@@ -13,7 +13,9 @@ export class WorkspaceService {
         return this._dataserver.get('wrkspcExists', req);
     }
 
-    saveWorkspaceInfo(req: any) {
+    saveEntityInfo(req: any) {
         return this._dataserver.post('saveWrkspace', req);
     }
+
+
 }

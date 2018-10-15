@@ -1,0 +1,47 @@
+.red {
+  color: #ff1d1d;
+}
+
+.green {
+  color: #00f700;
+}
+
+a.list-group-item.list-group-item-action {
+  cursor: pointer;
+}
+
+a.list-group-item.list-group-item-action.flex-column.active {
+  color: #FFFFFE;
+}
+
+.list-group-item.active {
+  background-color: #393836;
+  border-color: #292928;
+}
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: center;
+
+}
+
+.flex-container>.items {
+  text-align: center;
+  margin-right: 15px;
+  min-width: 90px;
+}
+
+.flex-container>.items span {
+  font-size: 13px;
+  padding: 0px;
+  margin: 0px;
+  font-weight: bold;
+  display: block;
+}
+
+.iteminner {
+  height: 33px;
+}

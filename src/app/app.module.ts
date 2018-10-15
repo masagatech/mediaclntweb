@@ -15,6 +15,8 @@ import { SharedModule } from './shared/shared-module';
 import { LoginComponent } from './users/login/login.comp';
 import { RegisterComponent } from './users/register/register.comp';
 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,7 @@ import { RegisterComponent } from './users/register/register.comp';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
+    ToastrModule.forRoot(),
     HttpModule,
     FormsModule,
     CommonModule,

@@ -1,0 +1,19 @@
+<!-- <ngx-datatable [rows]="rows" class="material" [headerHeight]="50" [footerHeight]="0" [rowHeight]="50" [columnMode]="'force'">
+  <ngx-datatable-column name="Code" prop="ws_code"></ngx-datatable-column>
+  <ngx-datatable-column name="Name" prop="ws_name"></ngx-datatable-column>
+</ngx-datatable> -->
+<div class="row">
+  <div class="col-md-3 col-sm-6 col-lg-2 " *ngFor="let item of items">
+    <div class="card text-white bg-dark mb-3" style="height: 220px">
+      <div class="card-header bg-transparent border-success ">
+        <h5 class="card-title">{{item.ws_name}}</h5>
+      </div>
+      <div class="card-body">
+        <!-- <h5 class="card-title"></h5> -->
+        <p class="card-text">{{item.desc}}</p>
+
+      </div>
+      <div class="card-footer bg-transparent border-dark text-right"> <a href="#" class="btn btn-primary">Go</a></div>
+    </div>
+  </div>
+</div>

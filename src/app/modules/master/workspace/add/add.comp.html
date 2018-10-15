@@ -1,0 +1,153 @@
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-lg-10">
+    <div class="card border-dark bg-dark text-white mb-3">
+      <div class="header">
+        <h4>Workspace</h4>
+
+        <ul class="header-dropdown m-r--5">
+          <!---->
+          <!---->
+          <!---->
+          <li>
+            <button class="btn btn-theme p-0" [disabled]="savedisabled" (click)="save()" role="button">
+              <i class="fa fa-save fa-2x"></i>
+            </button>
+          </li>
+          <li>
+            <button class="btn btn-theme p-0" role="button">
+              <i class="fa fa-arrow-left fa-2x"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="body">
+        <div class="row clearfix">
+          <div class="col-md-6 border">
+            <div class="row clearfix">
+              <div class="col-md-4">
+                <div class="form-group form-float">
+                  <div class="form-line focused">
+                    <label class="control-label">Workspace Code <strong>*</strong></label>
+                    <input class="form-control wscode" (blur)="onWsBlur()" [(ngModel)]="formd.ws_code" maxlength="6"
+                      minlength="4" tabindex="1" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group form-float">
+                  <div class="form-line">
+                    <label class="control-label">Workspace Name <strong>*</strong></label>
+                    <input class="form-control wsname" [(ngModel)]="formd.ws_name" maxlength="100" minlength="4"
+                      tabindex="2" type="text">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row clearfix">
+              <div class="col-md-12">
+                <div class="form-group form-float">
+                  <div class="form-line">
+                    <label class="control-label">Description</label>
+                    <textarea class="form-control no-resize auto-growth wsdesc" [(ngModel)]="formd.desc" maxlength="500"
+                      rows="5" tabindex="3"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row clearfix">
+              <div class="col-md-6">
+                <div class="form-group form-float">
+                  <div class="form-line">
+                    <label class="control-label">Login Code <strong>*</strong></label>
+                    <div class="row clearfix">
+                      <div class="col-md-7">
+                        <input class="form-control lgcode " [(ngModel)]="formd.login_code" maxlength="6" minlength="3"
+                          tabindex="4" type="text">
+                      </div>
+                      <div class="col-md-5">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group form-float">
+                  <div class="form-line">
+                    <label class="control-label float-left">Password <strong>*</strong></label>
+                    <label class="control-label float-right hide" id="lblshowpwd">
+                      <span class="material-icons font-18 m-t--10">vpn_key</span>
+                    </label>
+                    <label class="control-label float-right show" id="lblhidepwd">
+                      <span class="material-icons font-18 m-t--10">remove_red_eye</span>
+                    </label>
+
+                    <input class="form-control lgpwd " [(ngModel)]="formd.pwd" maxlength="10" minlength="4" tabindex="5"
+                      type="password">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="col-md-6">
+            <div class="row clearfix">
+              <div class="col-md-12">
+                <div class="form-group form-float">
+                  <div class="form-line">
+                    <label class="control-label">Contact Person <strong>*</strong></label>
+                    <input class="form-control cpname " [(ngModel)]="formd.contact_person" maxlength="100" minlength="10"
+                      tabindex="7" type="text">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row clearfix">
+              <div class="col-md-6">
+                <div class="form-group form-float">
+                  <div class="form-line">
+                    <label class="control-label">Mobile <strong>*</strong></label>
+                    <input class="form-control mobileno1 " [(ngModel)]="formd.mobile" maxlength="10" minlength="10"
+                      tabindex="8" type="text">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group form-float">
+                  <div class="form-line">
+                    <label class="control-label">Email <strong>*</strong></label>
+                    <input class="form-control email1 " [(ngModel)]="formd.email" maxlength="50" minlength="5" tabindex="10"
+                      type="text">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="row clearfix">
+              <div class="col-md-12">
+                <div class="form-group form-float">
+                  <div class="form-line">
+                    <label class="control-label">Address</label>
+                    <textarea class="form-control no-resize auto-growth address " [(ngModel)]="formd.address" maxlength="500"
+                      rows="5" tabindex="12"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-1">
+  </div>
+
+</div>

@@ -13,13 +13,13 @@ export class LoginService {
 
     getUser() {
         if (this.loginUser === undefined) {
-            let usr = Cookie.get("_session_");
+            const usr = Cookie.get('_session_');
 
             if (usr) {
-                //this._router.navigate(['login']);
+                // this._router.navigate(['login']);
                 return null;
             } else {
-                //this._router.navigate(['login']);
+                // this._router.navigate(['login']);
                 return null;
             }
         } else {
@@ -28,7 +28,7 @@ export class LoginService {
     }
 
     savePassword(req: any) {
-        return this._dataserver.post("savePassword", req);
+        return this._dataserver.post('savePassword', req);
     }
 
     setUsers(userDetails): LoginUserModel {
@@ -37,20 +37,19 @@ export class LoginService {
         if (userDetails == null) {
             Cookie.delete('_session_');
             sessionStorage.clear();
-        }
-        else {
+        } else {
             Cookie.delete('_session_');
-            Cookie.set("_session_", this.loginUser.sessiondetails.sessionid.toString());
+            Cookie.set('_session_', this.loginUser.sessiondetails.sessionid.toString());
         }
 
         return this.loginUser;
     }
 
     getUserDetails(req: any) {
-        return this._dataserver.post("getUserDetails", req)
+        return this._dataserver.post('getUserDetails', req)
     }
 
     saveUser(req: any) {
-        return this._dataserver.post("saveUserInfo", req)
+        return this._dataserver.post('saveUserInfo', req)
     }
 }

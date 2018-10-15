@@ -8,16 +8,16 @@
 
                 <form class="text-left form-validate">
                     <div class="form-group-material">
-                        <input id="txtfullname" type="text" [(ngModel)]="name" name="fullname" class="input-material fullname">
-                        <label for="txtfullname" class="label-material">Full Name</label>
+                        <input id="txtfullname" type="text" [(ngModel)]="name" name="fullname" class="input-material fullname" autofocus>
+                        <label for="txtfullname" class="label-material active">Full Name</label>
                     </div>
                     <div class="form-group-material">
                         <input id="txtemail" type="text" [(ngModel)]="email" name="email" class="input-material email">
-                        <label for="txtemail" class="label-material">Email Address</label>
+                        <label for="txtemail" class="label-material active">Email Address</label>
                     </div>
                     <div class="form-group-material">
                         <input id="txtpwd" type="password" [(ngModel)]="pwd" name="pwd" class="input-material pwd">
-                        <label for="txtpwd" class="label-material">Password</label>
+                        <label for="txtpwd" class="label-material active">Password</label>
 
                         <span id="lblshowpwd" class="password float-right" (click)="showPassword('password')"><i class="fa fa-key"></i></span>
                         <span id="lblhidepwd" class="password float-right" (click)="showPassword('text')"><i class="fa fa-eye"></i></span>
