@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="header">
+        <h4>Workspace</h4>
+
+        <ul class="header-dropdown m-r--5">
+            <li>
+                <a role="button" title="Add New" class="btn btn-theme" (click)="addWorkspace()">
+                    <i class="fa fa-plus fa-2x"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="body">
+        <div class="row">
+            <div class="col-md-4 col-xs-6" *ngFor="let row of workspaceDT">
+                <div class="card text-white bg-dark mb-3">
+                    <div class="card-header bg-transparent border-success">
+                        <h5 class="card-title">{{row.ws_name}}</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{row.ws_desc}}</p>
+                        <p class="card-text"><b>Contact Person : </b>{{row.contact_person}}</p>
+                        <p class="card-text"><b>Mobile : </b>{{row.mobile}}</p>
+                        <p class="card-text"><b>Email : </b>{{row.email}}</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-dark text-right">
+                        <a role="button" (click)="editWorkspace(row)" class="btn btn-primary">Edit</a>
+                        <a role="button" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="!workspaceDT.length">
+                <h4>NO Data Found....</h4>
+            </div>
+        </div>
+    </div>
+</div>

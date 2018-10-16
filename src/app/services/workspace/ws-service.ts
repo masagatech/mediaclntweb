@@ -5,15 +5,27 @@ import { DataService } from '../dataconnect';
 export class WorkspaceService {
     constructor(private _dataserver: DataService) { }
 
-    getWorkspaceDetails(req: any) {
-        return this._dataserver.get('getWrkspace', req);
+    // Insert / Update
+
+    saveWorkspace(req: any) {
+        return this._dataserver.post('saveWorkspace', req);
     }
 
-    exists(req: any) {
-        return this._dataserver.get('wrkspcExists', req);
+    // Exists
+
+    existsWorkspace(req: any) {
+        return this._dataserver.get('existsWorkspace', req);
     }
 
-    saveWorkspaceInfo(req: any) {
-        return this._dataserver.post('saveWrkspace', req);
+    // Get All Data
+
+    getAllWorkspace(req: any) {
+        return this._dataserver.get('getAllWorkspace', req);
+    }
+
+    // Get Data By ID
+
+    getWorkspaceByID(req: any) {
+        return this._dataserver.get('getWorkspaceByID', req);
     }
 }

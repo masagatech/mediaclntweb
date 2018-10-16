@@ -5,16 +5,16 @@ export class EntityService {
 
     constructor(private _dataserver: DataService) { }
 
-    geEntityDetails(req: any) {
-        return this._dataserver.get('getWrkspace', req);
+    getEntity(req: any) {
+        return this._dataserver.get('getEntity', req);
     }
 
-    exists(req: any) {
-        return this._dataserver.get('wrkspcExists', req);
+    existsEntity(req: any) {
+        return this._dataserver.get('existsEntity', req);
     }
 
-    saveEntityInfo(req: any) {
-        return this._dataserver.post('saveWrkspace', req);
+    saveEntity(req: any) {
+        return this._dataserver.post('saveEntity', req);
     }
 
 

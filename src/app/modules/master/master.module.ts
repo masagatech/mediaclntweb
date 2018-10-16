@@ -16,8 +16,8 @@ export const routes = [
                     // Dashboard
 
                     { path: '', loadChildren: './dashboard/index#DashboardModule' },
-                    { path: 'workspace', loadChildren: './workspace/work.module#WrkspcModule' },
-                    { path: 'entity', loadChildren: './entity/entt.module#EnttModule' },
+                    { path: 'workspace', loadChildren: './workspace/workspace.module#WorkspaceModule' },
+                    { path: 'entity', loadChildren: './entity/entity.module#EntityModule' },
                 ]
             }
         ]

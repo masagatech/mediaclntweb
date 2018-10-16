@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { EntityComponent } from './entt.comp';
+
+import { EntityComponent } from './entity.comp';
 
 export const routes = [
     {
@@ -11,7 +12,6 @@ export const routes = [
         ]
     },
 ];
-
 
 @NgModule({
     declarations: [EntityComponent],
@@ -22,7 +22,6 @@ export const routes = [
     providers: [],
 })
 
-
-export class EnttModule {
+export class EntityModule {
 
 }
