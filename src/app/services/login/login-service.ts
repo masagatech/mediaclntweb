@@ -13,16 +13,18 @@ export class LoginService {
 
     getUser() {
         if (this.loginUser === undefined) {
-            const usr = Cookie.get('_session_');
+            const usr = JSON.parse(Cookie.get('_session_'));
+            console.log("1");
 
             if (usr) {
                 // this._router.navigate(['login']);
-                return null;
+                return usr;
             } else {
                 // this._router.navigate(['login']);
                 return null;
             }
         } else {
+            console.log("2");
             return this.loginUser;
         }
     }
@@ -39,7 +41,11 @@ export class LoginService {
             sessionStorage.clear();
         } else {
             Cookie.delete('_session_');
-            Cookie.set('_session_', this.loginUser.sessiondetails.sessionid.toString());
+            Cookie.set('_session_', JSON.stringify(this.loginUser));
+
+            console.log("Login : " + JSON.stringify(this.loginUser));
+
+            // Cookie.set('_session_', this.loginUser.sessiondetails.sessionid.toString());
         }
 
         return this.loginUser;

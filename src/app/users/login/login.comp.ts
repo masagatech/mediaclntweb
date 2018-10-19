@@ -42,10 +42,10 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
                 if (d) {
                     if (d.status) {
                         const usrobj = d.data;
-                        const userDetails: LoginUserModel = usrobj[0];
+                        const userDetails: LoginUserModel = usrobj;
 
                         that._loginservice.setUsers(userDetails);
-                        that._router.navigate(['/']);
+                        that._router.navigate(['/admin/workspace']);
                     } else {
                         that._autoservice.showmsgbox('Error', d.err, 'error');
                     }

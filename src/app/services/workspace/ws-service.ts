@@ -7,8 +7,8 @@ export class WorkspaceService {
 
     // Insert / Update
 
-    saveWorkspace(req: any) {
-        return this._dataserver.post('saveWorkspace', req);
+    saveWorkspaceInfo(req: any) {
+        return this._dataserver.post('saveWorkspaceInfo', req);
     }
 
     // Exists
@@ -19,8 +19,8 @@ export class WorkspaceService {
 
     // Get All Data
 
-    getAllWorkspace(req: any) {
-        return this._dataserver.get('getAllWorkspace', req);
+    getWorkspaceDetails(req: any) {
+        return this._dataserver.get('getWorkspaceDetails', req);
     }
 
     // Get Data By ID

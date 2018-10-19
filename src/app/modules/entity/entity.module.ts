@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MasterComponent } from './master.comp';
+import { SharedModule } from '../../shared/shared-module';
+
+import { EntityComponent } from './entity.comp';
 
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -8,16 +10,13 @@ import { CommonModule } from '@angular/common';
 export const routes = [
     {
         path: '',
-        component: MasterComponent,
+        component: EntityComponent,
         children: [
             {
                 path: '',
                 children: [
                     // Dashboard
-
                     { path: '', loadChildren: './dashboard/index#DashboardModule' },
-                    { path: 'workspace', loadChildren: './workspace/workspace.module#WorkspaceModule' },
-                    { path: 'entity', loadChildren: './entity/entity.module#EntityModule' },
                 ]
             }
         ]
@@ -25,18 +24,17 @@ export const routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes),
-        FormsModule,
-        CommonModule,
+    imports: [
+        RouterModule.forChild(routes), SharedModule, FormsModule, CommonModule,
     ],
 
     declarations: [
-        MasterComponent
+        EntityComponent
     ],
 
     providers: []
 })
 
-export class MasterModule {
+export class EntityModule {
 
 }

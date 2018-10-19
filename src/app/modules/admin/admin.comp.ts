@@ -1,15 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
-    templateUrl: 'master.comp.html'
+    templateUrl: 'admin.comp.html'
 })
 
-export class MasterComponent implements OnInit, OnDestroy {
+export class AdminComponent implements OnInit, OnDestroy {
     constructor() {
         
     }
 
-    public ngOnInit() {
+    ngOnInit() {
 
     }
 

@@ -8,7 +8,7 @@ export const ROUTES: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
-  { path: '', loadChildren: './modules#MainModule' },
+  { path: '', loadChildren: './modules#ModulesModule' },
 
   { path: '**', component: NoContentComponent },
 ];

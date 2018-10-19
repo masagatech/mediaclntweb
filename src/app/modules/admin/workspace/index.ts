@@ -3,31 +3,27 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 import { WorkspaceService } from '../../../services/workspace/ws-service';
 
-import { WorkspceComponent } from './workspace.comp';
 import { AddWorkspaceComponent } from './add/addws.comp';
 import { ViewWorkspaceComponent } from './view/viewws.comp';
 
 export const routes = [
     {
         path: '',
-        component: WorkspceComponent,
         children: [
-            {
-                path: '',
-                children: [
-                    { path: '', component: ViewWorkspaceComponent },
-                    { path: 'add', component: AddWorkspaceComponent },
-                    { path: 'edit/:id', component: AddWorkspaceComponent }
-                ]
-            },
+            { path: '', component: ViewWorkspaceComponent },
+            { path: 'add', component: AddWorkspaceComponent },
+            { path: 'edit/:id', component: AddWorkspaceComponent }
         ]
     },
 ];
 
 @NgModule({
-    declarations: [WorkspceComponent, AddWorkspaceComponent, ViewWorkspaceComponent],
+    declarations: [
+        AddWorkspaceComponent, ViewWorkspaceComponent
+    ],
 
     imports: [
         CommonModule, FormsModule, ReactiveFormsModule, RouterModule.forChild(routes), NgxDatatableModule
@@ -38,6 +34,6 @@ export const routes = [
     providers: [WorkspaceService],
 })
 
-export class WorkspaceModule {
+export class WorkspaceMasterModule {
 
 }
