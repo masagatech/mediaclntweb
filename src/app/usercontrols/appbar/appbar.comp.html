@@ -3,8 +3,10 @@
     <nav class="navbar fixed-top">
         <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
-                <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a>
-                    <a href="index.html" class="navbar-brand">
+                <div class="navbar-header">
+                    <a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"></i></a>
+
+                    <a role="button" class="navbar-brand" (click)="openMainForm()">
                         <div class="brand-text d-none d-md-inline-block">
                             <strong class="text-primary">{{ws_name}}</strong><br />
                             <small>{{entt_name}}</small>

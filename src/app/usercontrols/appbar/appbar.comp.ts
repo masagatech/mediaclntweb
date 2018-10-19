@@ -24,6 +24,10 @@ export class AppBarComponent implements OnInit {
         this._wsdetails = Globals.getWSDetails();
         this._enttdetails = Globals.getEntityDetails();
 
+        this.getHeaderDetails();
+    }
+
+    getHeaderDetails() {
         this.user_name = this.loginUser.name;
 
         if (sessionStorage.getItem("_wsdetails_") !== null && sessionStorage.getItem("_wsdetails_") !== undefined) {
@@ -36,6 +40,10 @@ export class AppBarComponent implements OnInit {
                 this.ws_name = this._wsdetails.ws_name;
             }
         }
+    }
+
+    openMainForm() {
+        this._router.navigate(['/admin/workspace']);
     }
 
     ngOnInit() {
