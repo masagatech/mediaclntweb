@@ -52,6 +52,7 @@ export class ViewWorkspaceComponent implements OnInit {
     // Open Entity Form
 
     openEntityForm(row) {
+        sessionStorage.removeItem("_enttdetails_");
         sessionStorage.removeItem("_wsdetails_");
         sessionStorage.setItem("_wsdetails_", JSON.stringify(row));
 
