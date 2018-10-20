@@ -10,7 +10,7 @@ export class LoginUser {
 
 export interface LoginUserModel {
   _id: string;
-  code: string;
+  ucode: string;
   pwd: string;
   full_name: string;
   email: string;

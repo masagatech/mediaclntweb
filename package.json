@@ -30,6 +30,7 @@
     "ng2-cookies": "^1.0.12",
     "ngx-mqtt": "^6.6.0",
     "ngx-toastr": "^9.1.0",
+    "primeng": "^6.1.5",
     "rxjs": "^6.0.0",
     "sweetalert2": "^7.26.29",
     "zone.js": "^0.8.26"

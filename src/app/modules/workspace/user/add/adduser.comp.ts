@@ -21,9 +21,16 @@ export class AddUserComponent implements OnInit, OnDestroy {
     genderDT: any = [];
     utypeDT: any = [];
 
+    isAllEnttRights: boolean = true;
+    entityDT: any = [];
+    entityList: any = [];
+    selectedEntity: any = [];
+    enttid: number = 0;
+    enttname: string = "";
+
     formd = {
         _id: 0,
-        code: '',
+        ucode: '',
         pwd: '',
         full_name: '',
         gender: '',
@@ -32,6 +39,7 @@ export class AddUserComponent implements OnInit, OnDestroy {
         mobile: '',
         email: '',
         address: '',
+        enttids: {},
         wsid: 0,
         createdby: '',
         isedit: false
@@ -65,6 +73,79 @@ export class AddUserComponent implements OnInit, OnDestroy {
         })
     }
 
+    // Is Rights Entity
+
+    isAllEntityRights() {
+        if (this.isAllEnttRights) {
+            this.entityList = [];
+        }
+    }
+
+    // Auto Completed Entity
+
+    getEntityData(event) {
+        let query = event.query;
+
+        this._autoservice.getAutoData({
+            "flag": "entity",
+            "wsid": this._wsdetails._id,
+            "search": query
+        }).subscribe((data) => {
+            this.entityDT = data.data;
+        }, err => {
+            this.toastr.error('error', err);
+        }, () => {
+
+        });
+    }
+
+    // Selected Entity
+
+    selectEntityData(event, type) {
+        this.enttid = event.value;
+
+        this.addEntityList();
+        $(".enttname input").focus();
+    }
+
+    // Check Duplicate Entity
+
+    isDuplicateEntity() {
+        var that = this;
+
+        for (var i = 0; i < that.entityList.length; i++) {
+            var field = that.entityList[i];
+
+            if (field.enttid == that.enttid) {
+                that.toastr.error('error', 'Duplicate Entity not Allowed');
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    // Read Get Entity
+
+    addEntityList() {
+        var that = this;
+        var duplicateEntity = that.isDuplicateEntity();
+
+        if (!duplicateEntity) {
+            that.entityList.push({
+                "enttid": that.selectedEntity.value, "enttname": that.selectedEntity.label
+            });
+        }
+
+        that.enttid = 0;
+        that.enttname = "";
+        that.selectedEntity = [];
+    }
+
+    deleteEntity(row) {
+        this.entityList.splice(this.entityList.indexOf(row), 1);
+    }
+
     showPassword(type) {
         if (type === 'text') {
             $('#lblshowpwd').removeClass('hide');
@@ -90,6 +171,7 @@ export class AddUserComponent implements OnInit, OnDestroy {
 
         that.formd.createdby = that.loginUser._id;
         that.formd.wsid = that._wsdetails._id;
+        that.formd.enttids = Object.keys(that.entityList).map(function (k) { return that.entityList[k].enttid });
 
         that._userservice.saveUserInfo(that.formd).subscribe(d => {
             try {
@@ -120,7 +202,7 @@ export class AddUserComponent implements OnInit, OnDestroy {
     resetUserFields() {
         const that = this;
 
-        that.formd.code = '';
+        that.formd.ucode = '';
         that.formd.pwd = '';
         that.formd.full_name = '';
         that.formd.gender = '';
@@ -143,7 +225,7 @@ export class AddUserComponent implements OnInit, OnDestroy {
 
                 that._userservice.getUserByID({ "id": that.paramsid }).subscribe((d) => {
                     that.formd._id = d.data._id;
-                    that.formd.code = d.data.code;
+                    that.formd.ucode = d.data.ucode;
                     that.formd.pwd = d.data.pwd;
                     that.formd.full_name = d.data.full_name;
                     that.formd.gender = d.data.gender;

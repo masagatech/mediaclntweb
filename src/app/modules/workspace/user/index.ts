@@ -10,6 +10,8 @@ import { CommonService } from '../../../services/common/common-service';
 import { AddUserComponent } from './add/adduser.comp';
 import { ViewUserComponent } from './view/viewuser.comp';
 
+import { AutoCompleteModule } from 'primeng/primeng';
+
 export const routes = [
     {
         path: '',
@@ -27,7 +29,8 @@ export const routes = [
     ],
 
     imports: [
-        CommonModule, FormsModule, ReactiveFormsModule, RouterModule.forChild(routes), NgxDatatableModule
+        CommonModule, FormsModule, ReactiveFormsModule, RouterModule.forChild(routes), NgxDatatableModule,
+        AutoCompleteModule
     ],
 
     exports: [],
