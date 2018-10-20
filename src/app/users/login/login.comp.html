@@ -1,34 +1,34 @@
 <div class="page login-page">
-  <div class="container">
-    <div class="form-outer text-center d-flex align-items-center">
-      <div class="form-inner" style="width:100%">
-        <div class="logo text-uppercase">
-          <span>MEDIA</span><strong class="text-primary">CLIENT</strong>
+    <div class="container">
+        <div class="form-outer text-center d-flex align-items-center">
+            <div class="form-inner" style="width:100%">
+                <div class="logo text-uppercase">
+                    <span>MEDIA</span><strong class="text-primary">CLIENT</strong>
+                </div>
+
+                <form method="get" class="text-left form-validate">
+                    <div class="form-group-material">
+                        <input id="login-username" type="text" [(ngModel)]="_user.code" name="loginUsername" class="input-material" required autofocus>
+                        <label for="login-username" class="active">Username</label>
+                    </div>
+                    <div class="form-group-material">
+                        <input id="login-password" type="password" [(ngModel)]="_user.pwd" name="loginPassword" class="input-material" required>
+                        <label for="login-password" class="label-material active">Password</label>
+                    </div>
+                    <div class="form-group text-center">
+                        <a role="button" (click)="login($event)" class="btn btn-primary">Login</a>
+                    </div>
+                </form>
+
+                <div class="hide">
+                    <a href="#" class="forgot-pass">Forgot Password?</a>
+                    <small>Do not have an account? </small>
+                    <a [routerLink]="['/register']" class="signup">Signup</a>
+                </div>
+            </div>
         </div>
-
-        <form method="get" class="text-left form-validate">
-          <div class="form-group-material">
-            <input id="login-username" type="text" [(ngModel)]="_user.email" name="loginUsername" class="input-material"
-              required autofocus>
-            <label for="login-username" class="active">Username</label>
-          </div>
-          <div class="form-group-material">
-            <input id="login-password" type="password" [(ngModel)]="_user.pwd" name="loginPassword" class="input-material"
-              required>
-            <label for="login-password" class="label-material active">Password</label>
-          </div>
-          <div class="form-group text-center">
-            <a role="button" (click)="login($event)" class="btn btn-primary">Login</a>
-          </div>
-        </form>
-
-        <a href="#" class="forgot-pass">Forgot Password?</a>
-        <small>Do not have an account? </small>
-        <a [routerLink]="['/register']" class="signup">Signup</a>
-      </div>
     </div>
-  </div>
-  <div class="copyrights text-center">
-    <p>Develope by <a [routerLink]="['/']" class="external">Masaga Technology</a></p>
-  </div>
+    <div class="copyrights text-center">
+        <p>Develope by <a [routerLink]="['/']" class="external">Masaga Technology</a></p>
+    </div>
 </div>

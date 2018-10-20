@@ -1,5 +1,9 @@
 /* your styles go here */
 
+textarea {
+    resize: none;
+}
+
 .hide {
     display: none !important;
 }
@@ -334,4 +338,19 @@
 
 .col-white {
     color: #ffffff !important;
+}
+
+
+/* Text Align */
+
+.float-left {
+    float: left !important;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.float-none {
+    float: none !important;
 }

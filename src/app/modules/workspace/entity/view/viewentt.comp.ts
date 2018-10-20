@@ -7,7 +7,7 @@ import { Globals } from '../../../../const/globals';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-    selector: 'app-wrk-view',
+    selector: 'app-entt-view',
     templateUrl: './viewentt.comp.html'
 })
 

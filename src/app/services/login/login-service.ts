@@ -54,8 +54,4 @@ export class LoginService {
     getUserDetails(req: any) {
         return this._dataserver.post('getUserDetails', req)
     }
-
-    saveUser(req: any) {
-        return this._dataserver.post('saveUserInfo', req)
-    }
 }

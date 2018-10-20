@@ -17,6 +17,9 @@ export const routes = [
                 children: [
                     // Entity
                     { path: 'entity', loadChildren: './entity/index#EntityMasterModule' },
+                    
+                    // User
+                    { path: 'user', loadChildren: './user/index#UserMasterModule' },
                 ]
             }
         ]

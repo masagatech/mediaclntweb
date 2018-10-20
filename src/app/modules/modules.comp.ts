@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cookie } from 'ng2-cookies/ng2-cookies';
 
 @Component({
     selector: 'app-maincomp',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ModulesComponent implements OnInit {
-    constructor() {
-
+    constructor(private _router: Router) {
+        if (Cookie.get("_session_") == null && Cookie.get("_session_") == undefined) {
+            this._router.navigate(['/login']);
+        }
     }
 
     ngOnInit() {

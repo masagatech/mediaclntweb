@@ -1,5 +1,5 @@
 export class UserReq {
-  constructor(public email: string, public pwd: string) {
+  constructor(public code: string, public pwd: string) {
 
   }
 }
@@ -10,9 +10,12 @@ export class LoginUser {
 
 export interface LoginUserModel {
   _id: string;
-  email: string;
+  code: string;
   pwd: string;
-  name: string;
+  full_name: string;
+  email: string;
+  utype: string;
+  wsid: number;
   status: boolean,
   errcode: string,
   err: string,

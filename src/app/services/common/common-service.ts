@@ -10,6 +10,36 @@ export class CommonService {
 
     }
 
+    getMenuDetails(req: any) {
+        return this._dataserver.post("getMenuDetails", req)
+    }
+
+    // MOM
+
+    saveMOM(req: any) {
+        return this._dataserver.post("saveMOM", req)
+    }
+
+    getMOM(req: any) {
+        return this._dataserver.post("getMOM", req)
+    }
+
+    getMOMByID(req: any) {
+        return this._dataserver.post("getMOMByID", req)
+    }
+
+    // Common
+
+    getAutoData(req: any) {
+        return this._dataserver.get("getAutoData", req)
+    }
+
+    getDropDownData(req: any) {
+        return this._dataserver.post("getDropDownData", req)
+    }
+
+    // Convert Array
+
     isArray(obj) {
         return (Object.prototype.toString.call(obj) === '[object Array]');
     }
@@ -52,34 +82,8 @@ export class CommonService {
         return JSON.stringify(jsval).replace("[[{", "[{").replace("}]]", "}]").replace("}],[{", "},{").replace("[],[", "[").replace(",[]]", "").replace("[[],", "").replace(",[]", "");
     }
 
-    // Ownership Transfer
-
-    saveOwnershipTransfer(req: any) {
-        return this._dataserver.post("saveOwnershipTransfer", req)
-    }
-
     getFilePath(req: any) {
         return this._dataserver.get("getFilePath", req)
-    }
-
-    getAutoData(req: any) {
-        return this._dataserver.get("getAutoData", req)
-    }
-
-    getDropDownData(req: any) {
-        return this._dataserver.post("getDropDownData", req)
-    }
-
-    getMOM(req: any) {
-        return this._dataserver.post("getMOM", req)
-    }
-
-    getMenuDetails(req: any) {
-        return this._dataserver.post("getMenuDetails", req)
-    }
-
-    saveMOM(req: any) {
-        return this._dataserver.post("saveMOM", req)
     }
 
     public exportToCSV(data: any, exportFileName: string) {

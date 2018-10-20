@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
     _user = new UserReq('', '');
 
-    constructor(private _router: Router, private _service: AuthenticationService, private _loginservice: LoginService,
+    constructor(private _router: Router, private _authservice: AuthenticationService, private _loginservice: LoginService,
         private _autoservice: CommonService) {
 
     }
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
         const that = this;
         that.btnLoginText = 'Loging..';
 
-        that._service.login(that._user).subscribe(d => {
+        that._authservice.login(that._user).subscribe(d => {
             try {
                 if (d) {
                     if (d.status) {

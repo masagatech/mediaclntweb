@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppBarComponent } from '../usercontrols/appbar/appbar.comp';
 
@@ -11,8 +14,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
     declarations: [AppBarComponent],
-    imports: [CommonModule, HttpClientModule, NgAggregatePipesModule],
-    exports: [CommonModule, HttpClientModule, AppBarComponent, NgAggregatePipesModule],
+    imports: [RouterModule, FormsModule, CommonModule, HttpClientModule, NgAggregatePipesModule],
+    exports: [HttpClientModule, AppBarComponent, NgAggregatePipesModule],
     providers: [],
 })
 
