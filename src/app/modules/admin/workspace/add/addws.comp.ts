@@ -28,6 +28,7 @@ export class AddWorkspaceComponent implements OnInit, OnDestroy {
         email: '',
         address: '',
         createdby: '',
+        updatedby: '',
         isedit: false
     };
 
@@ -48,6 +49,13 @@ export class AddWorkspaceComponent implements OnInit, OnDestroy {
 
     saveWorkspace() {
         var that = this;
+
+        if (that.formd.isedit == true) {
+            that.formd.updatedby = that.loginUser._id;
+        }
+        else {
+            that.formd.createdby = that.loginUser._id;
+        }
 
         that._wsservice.saveWorkspaceInfo(that.formd).subscribe((d) => {
             if (d.errcode == -1) {
@@ -84,7 +92,8 @@ export class AddWorkspaceComponent implements OnInit, OnDestroy {
             mobile: '',
             email: '',
             address: '',
-            createdby: this.loginUser._id,
+            createdby: '',
+            updatedby: '',
             isedit: false
         };
     }

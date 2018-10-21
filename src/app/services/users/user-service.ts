@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { DataService } from '../dataconnect';
-import { Router } from '@angular/router';
 
 @Injectable()
 export class UserService {
-    constructor(private _dataserver: DataService, private _router: Router) { }
+    constructor(private _dataserver: DataService) { }
 
     // Insert / Update
 
@@ -26,6 +25,12 @@ export class UserService {
 
     getUserByID(req: any) {
         return this._dataserver.get('getUserByID', req);
+    }
+
+    // Get Entity By User ID
+
+    getUserEntity(req: any) {
+        return this._dataserver.get('getUserEntity', req);
     }
 
     // Get DropDown Data

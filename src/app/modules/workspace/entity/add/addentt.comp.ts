@@ -27,6 +27,7 @@ export class AddEntityComponent implements OnInit, OnDestroy {
         address: '',
         wsid: 0,
         createdby: '',
+        updatedby: '',
         isedit: false
     };
 
@@ -42,12 +43,18 @@ export class AddEntityComponent implements OnInit, OnDestroy {
         this.getEntity();
     }
 
-    // Save
+    // Save Data
 
     saveEntity() {
         var that = this;
 
-        that.formd.createdby = that.loginUser._id;
+        if (that.formd.isedit == true) {
+            that.formd.updatedby = that.loginUser._id;
+        }
+        else {
+            that.formd.createdby = that.loginUser._id;
+        }
+
         that.formd.wsid = that._wsdetails._id;
 
         that._enttservice.saveEntityInfo(that.formd).subscribe((d) => {
@@ -82,8 +89,9 @@ export class AddEntityComponent implements OnInit, OnDestroy {
             mobile: '',
             email: '',
             address: '',
-            wsid: this._wsdetails._id,
-            createdby: this.loginUser._id,
+            wsid: 0,
+            createdby: '',
+            updatedby: '',
             isedit: false
         };
     }

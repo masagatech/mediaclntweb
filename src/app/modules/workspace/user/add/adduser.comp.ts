@@ -21,12 +21,11 @@ export class AddUserComponent implements OnInit, OnDestroy {
     genderDT: any = [];
     utypeDT: any = [];
 
-    isAllEnttRights: boolean = true;
     entityDT: any = [];
     entityList: any = [];
     selectedEntity: any = [];
-    enttid: number = 0;
-    enttname: string = "";
+    entt_id: number = 0;
+    entt_name: string = "";
 
     formd = {
         _id: 0,
@@ -39,9 +38,11 @@ export class AddUserComponent implements OnInit, OnDestroy {
         mobile: '',
         email: '',
         address: '',
+        isallentt: false,
         enttids: {},
         wsid: 0,
         createdby: '',
+        updatedby: '',
         isedit: false
     };
 
@@ -76,7 +77,7 @@ export class AddUserComponent implements OnInit, OnDestroy {
     // Is Rights Entity
 
     isAllEntityRights() {
-        if (this.isAllEnttRights) {
+        if (this.formd.isallentt) {
             this.entityList = [];
         }
     }
@@ -102,7 +103,7 @@ export class AddUserComponent implements OnInit, OnDestroy {
     // Selected Entity
 
     selectEntityData(event, type) {
-        this.enttid = event.value;
+        this.entt_id = event.value;
 
         this.addEntityList();
         $(".enttname input").focus();
@@ -116,7 +117,7 @@ export class AddUserComponent implements OnInit, OnDestroy {
         for (var i = 0; i < that.entityList.length; i++) {
             var field = that.entityList[i];
 
-            if (field.enttid == that.enttid) {
+            if (field._id == that.entt_id) {
                 that.toastr.error('error', 'Duplicate Entity not Allowed');
                 return true;
             }
@@ -133,12 +134,12 @@ export class AddUserComponent implements OnInit, OnDestroy {
 
         if (!duplicateEntity) {
             that.entityList.push({
-                "enttid": that.selectedEntity.value, "enttname": that.selectedEntity.label
+                "_id": that.selectedEntity.value, "entt_name": that.selectedEntity.label
             });
         }
 
-        that.enttid = 0;
-        that.enttname = "";
+        that.entt_id = 0;
+        that.entt_name = "";
         that.selectedEntity = [];
     }
 
@@ -166,15 +167,34 @@ export class AddUserComponent implements OnInit, OnDestroy {
 
     // Save Data
 
-    saveUser() {
+    saveUserInfo() {
         const that = this;
 
-        that.formd.createdby = that.loginUser._id;
-        that.formd.wsid = that._wsdetails._id;
-        that.formd.enttids = Object.keys(that.entityList).map(function (k) { return that.entityList[k].enttid });
+        if (that.formd.isedit == true) {
+            that.formd.updatedby = that.loginUser._id;
+        }
+        else {
+            that.formd.createdby = that.loginUser._id;
+        }
 
-        that._userservice.saveUserInfo(that.formd).subscribe(d => {
+        that.formd.wsid = that._wsdetails._id;
+
+        if (that.formd.utype == "wsadmin") {
+            that.formd.enttids = [0];
+        }
+        else {
+            if (that.formd.isallentt) {
+                that.formd.enttids = [0];
+            }
+            else {
+                that.formd.enttids = Object.keys(that.entityList).map(function (k) { return that.entityList[k]._id });
+            }
+        }
+
+        that._userservice.saveUserInfo(that.formd).subscribe((d) => {
             try {
+                debugger;
+
                 if (d.errcode === '-1') {
                     that.toastr.error('error', d.err);
                 } else {
@@ -202,15 +222,24 @@ export class AddUserComponent implements OnInit, OnDestroy {
     resetUserFields() {
         const that = this;
 
-        that.formd.ucode = '';
-        that.formd.pwd = '';
-        that.formd.full_name = '';
-        that.formd.gender = '';
-        that.formd.utype = '';
-        that.formd.about_us = '';
-        that.formd.mobile = '';
-        that.formd.email = '';
-        that.formd.address = '';
+        this.formd = {
+            _id: 0,
+            ucode: '',
+            pwd: '',
+            full_name: '',
+            gender: '',
+            utype: '',
+            about_us: '',
+            mobile: '',
+            email: '',
+            address: '',
+            isallentt: false,
+            enttids: {},
+            wsid: 0,
+            createdby: '',
+            updatedby: '',
+            isedit: false
+        };
     }
 
     // Get Fields
@@ -235,8 +264,11 @@ export class AddUserComponent implements OnInit, OnDestroy {
                     that.formd.mobile = d.data.mobile;
                     that.formd.email = d.data.email;
                     that.formd.address = d.data.address;
+
+                    that.formd.isallentt = d.data.isallentt;
+                    that.entityList = d.data.entity;
                 }, (err) => {
-                    that.toastr.success('success', err);
+                    that.toastr.error('error', err);
                 }, () => {
 
                 });
