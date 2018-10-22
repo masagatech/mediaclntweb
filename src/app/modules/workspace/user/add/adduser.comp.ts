@@ -165,42 +165,6 @@ export class AddUserComponent implements OnInit, OnDestroy {
         $('.pwd').attr('type', type);
     }
 
-    // Validation
-
-    isValidUser() {
-        var that = this;
-
-        if (that.paramsid == 0) {
-            // Exists User Code
-
-            that._userservice.existsUserCode({ "ucode": that.formd.ucode }).subscribe((d) => {
-                if (d.status) {
-                    that.toastr.warning('error', "User Code is Already Exists");
-                    return false;
-                }
-            }, (err) => {
-                that.toastr.error('error', err);
-            }, () => {
-
-            });
-
-            // Exists Email
-
-            that._userservice.existsEmail({ "email": that.formd.email }).subscribe((d) => {
-                if (d.status) {
-                    that.toastr.warning('error', "Email is Already Exists");
-                    return false;
-                }
-            }, (err) => {
-                that.toastr.error('error', err);
-            }, () => {
-
-            });
-        }
-
-        return true;
-    }
-
     // Save Data
 
     saveUserInfo() {
