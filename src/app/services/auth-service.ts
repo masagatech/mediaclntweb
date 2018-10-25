@@ -37,7 +37,7 @@ export class AuthenticationService {
     var otherdetails = this.getClientInfo();
 
     let loginRes: any = this._dataserver.post("login", {
-      "code": user.code,
+      "ucode": user.ucode,
       "pwd": user.pwd,
       "otherdetails": otherdetails
     })

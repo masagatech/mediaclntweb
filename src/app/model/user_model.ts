@@ -1,5 +1,5 @@
 export class UserReq {
-  constructor(public code: string, public pwd: string) {
+  constructor(public ucode: string, public pwd: string) {
 
   }
 }

@@ -287,12 +287,6 @@ nav.navbar .dropdown-menu {
     right: 0;
     left: auto;
     float: left;
-    margin-top: 16px;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    font-size: 1rem;
-    padding: 1rem;
 }
 
 nav.navbar .dropdown-menu .dropdown-item {
@@ -2755,9 +2749,8 @@ a.text-primary:hover {
 .dropdown-menu {
     z-index: 1000;
     min-width: 10rem;
-    padding: 0.5rem 0;
-    margin: 0.125rem 0 0;
-    font-size: 1rem;
+    padding: 0;
+    margin: 0;
     color: #212529;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.15);
