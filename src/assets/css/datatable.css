@@ -2347,7 +2347,7 @@ button.ui-button::-moz-focus-inner {
     margin: 0;
     outline: medium none;
     padding: 4px;
-    height: 34px;
+    height: 30px;
     font-weight: normal
 }
 
@@ -4375,8 +4375,7 @@ button.ui-button::-moz-focus-inner {
 .ui-search {
     background: linear-gradient(to bottom right, #1d2124, #393836);
     position: absolute;
-    padding: 10px;
-    margin-left: -2px;
+    padding: 8px;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
 }

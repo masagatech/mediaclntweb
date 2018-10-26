@@ -2,7 +2,7 @@
     <div class="col-md-1">
     </div>
     <div class="col-lg-10">
-        <div class="card border-dark bg-dark text-white mb-3">
+        <div class="card bg-dark col-white">
             <div class="header">
                 <h4>User</h4>
 
@@ -148,7 +148,7 @@
 
                             <div *ngIf="entityList.length">
                                 <ul class="list-group">
-                                    <li class="list-group-item" *ngFor="let row of entityList; let i = index;">
+                                    <li class="list-group-item p-2" *ngFor="let row of entityList; let i = index;">
                                         <span class="col-black">
                                            <b>{{i + 1}}.</b> {{row.entt_name}}
                                         </span>

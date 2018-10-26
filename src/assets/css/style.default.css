@@ -1291,12 +1291,10 @@ label {
 }
 
 .form-control {
-    height: calc(2.4rem + 2px);
-    padding: 0.45rem 0.75rem;
-    font-size: 1rem;
+    height: calc(1.5rem + 2px);
+    padding: 0 7px;
     line-height: 1.5;
     color: #495057;
-    border-radius: 0;
 }
 
 .form-control::-moz-placeholder {
@@ -3142,11 +3140,12 @@ a>code {
     background-color: #fff;
     border: 0 solid #eee;
     border-radius: 0;
+    border: 1px inset #cacaca;
 }
 
 .card .header {
     color: #fff;
-    padding: 0 10px;
+    padding: 10px;
     position: relative;
 }
 

@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="header">
+    <div class="header bg-dark">
         <h4>User</h4>
 
         <ul class="header-dropdown m-r--5">
@@ -15,19 +15,16 @@
             <div class="col-md-4 col-xs-6" *ngFor="let row of userDT">
                 <div class="card text-white bg-dark mb-3">
                     <div class="card-header bg-transparent border-success">
-                        <h5 class="card-title">{{row.full_name}}</h5>
+                        <h5 class="card-title">{{row.full_name}} ({{row.gender[0].val}})</h5>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><b>User Type : </b>{{row.utype}}</p>
+                        <p class="card-text"><b>User Type : </b>{{row.utype[0].val}}</p>
                         <p class="card-text"><b>Mobile : </b>{{row.mobile}}</p>
                         <p class="card-text"><b>Email : </b>{{row.email}}</p>
                     </div>
                     <div class="card-footer bg-transparent border-dark text-right">
                         <a role="button" (click)="editUser(row)" class="btn btn-primary">
                             <i class="fa fa-edit"></i>
-                        </a>
-                        <a role="button" (click)="openMainForm(row)" class="btn btn-primary">
-                            <i class="fa fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
