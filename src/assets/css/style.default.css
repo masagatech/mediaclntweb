@@ -2530,7 +2530,8 @@ body {
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-image: url(/assets/img/bg.png);
 }
 
 a {
@@ -3147,6 +3148,7 @@ a>code {
     color: #fff;
     padding: 10px;
     position: relative;
+    border-bottom: solid 1px #cccccc
 }
 
 .card>.list-group:first-child .list-group-item:first-child {

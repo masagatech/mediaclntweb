@@ -17,6 +17,9 @@ export const routes = [
                 children: [
                     // Dashboard
                     { path: '', loadChildren: './dashboard/index#DashboardModule' },
+                    
+                    // Zone
+                    { path: 'zone', loadChildren: './zone/index#ZoneMasterModule' },
                 ]
             }
         ]

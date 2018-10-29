@@ -11,12 +11,6 @@ export class EntityService {
         return this._dataserver.post('saveEntityInfo', req);
     }
 
-    // Exists
-
-    existsEntity(req: any) {
-        return this._dataserver.get('existsEntity', req);
-    }
-
     // Get All Data
 
     getEntityDetails(req: any) {

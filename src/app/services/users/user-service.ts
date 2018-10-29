@@ -5,18 +5,6 @@ import { DataService } from '../dataconnect';
 export class UserService {
     constructor(private _dataserver: DataService) { }
 
-    // Exists User Code
-
-    existsUserCode(req: any) {
-        return this._dataserver.get('existsUserCode', req);
-    }
-
-    // Exists Email
-
-    existsEmail(req: any) {
-        return this._dataserver.get('existsEmail', req);
-    }
-
     // Insert / Update
 
     registeredUser(req: any) {
