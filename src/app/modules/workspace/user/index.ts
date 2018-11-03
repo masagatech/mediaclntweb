@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
+import { AutoCompleteModule } from 'primeng/primeng';
 
 import { UserService } from '../../../services/users/user-service';
 import { CommonService } from '../../../services/common/common-service';
 
 import { AddUserComponent } from './add/adduser.comp';
 import { ViewUserComponent } from './view/viewuser.comp';
-
-import { AutoCompleteModule } from 'primeng/primeng';
 
 export const routes = [
     {
